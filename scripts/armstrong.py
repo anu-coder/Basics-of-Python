@@ -1,16 +1,18 @@
-# armstrong number: 153 = 1^3+5^3+3^3
+# armstrong number: sum of the cubes of the digits equals number: eg: 153 = 1^3+5^3+3^3
 
 def is_armstrong(n):
-    s=0
+    sum_of_cubes=0
     a = n
     while(n>0):
         p = n %10
-        s = s + (p*p*p)
+        sum_of_cubes = sum_of_cubes + (p**3)
         n = int(n/10)
-    if s == a:
+    if sum_of_cubes == a:
         return True
     else:
         return False
 
-n = int(input("Enter any number: "))
-print(is_armstrong(n))
+
+if __name__ == '__main__':
+    n = int(input("Enter any number: "))
+    print(is_armstrong(n))
