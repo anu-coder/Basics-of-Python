@@ -23,7 +23,10 @@ if __name__ == '__main__':
     print('The headers of the file are: ')
     for i, col in enumerate(colnames):
         print(f'{i+1}. {col}')
-    col_choice = input("Choose a header: ")
-    max_rows = input("Max rows to display: ")
+    col_choice = int(input("Choose a header: "))
+    max_rows = int(input("Max rows to display: "))
+    print('\n')
+    print(colnames[col_choice])
+    print('----------')
     display_columns(col_choice, max_rows, content)
 
