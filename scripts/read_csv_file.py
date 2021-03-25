@@ -11,7 +11,7 @@ def read_csv_file(path):
 
 def display_columns(col_choice, max_rows, content):
     for lines in content[0:max_rows]:
-        print(lines[col_choice])
+        print(lines[col_choice-1])
 
 
 
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     col_choice = int(input("Choose a header: "))
     max_rows = int(input("Max rows to display: "))
     print('\n')
-    print(colnames[col_choice])
+    print(colnames[col_choice-1])
     print('----------')
     display_columns(col_choice, max_rows, content)
 
