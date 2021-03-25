@@ -27,6 +27,6 @@ if __name__ == '__main__':
     max_rows = int(input("Max rows to display: "))
     print('\n')
     print(colnames[col_choice-1])
-    print('----------')
+    print('-'*len(colnames[col_choice-1]))
     display_columns(col_choice, max_rows, content)
 
