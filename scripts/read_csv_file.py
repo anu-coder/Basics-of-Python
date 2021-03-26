@@ -13,7 +13,6 @@ def display_columns(col_choice, max_rows, content):
     for lines in content[0:max_rows]:
         print(lines[col_choice-1])
 
-
 if __name__ == '__main__':
     path = r"..\data\Favorite TV Shows - Form Responses 1.csv"
     colnames = read_csv_file(path)[0]
