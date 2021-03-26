@@ -14,10 +14,8 @@ def display_columns(col_choice, max_rows, content):
         print(lines[col_choice-1])
 
 
-
-
 if __name__ == '__main__':
-    path = '..\data\Favorite TV Shows - Form Responses 1.csv'
+    path = r"..\data\Favorite TV Shows - Form Responses 1.csv"
     colnames = read_csv_file(path)[0]
     content = read_csv_file(path)[1]
     print('The headers of the file are: ')
@@ -25,7 +23,7 @@ if __name__ == '__main__':
         print(f'{i+1}. {col}')
     col_choice = int(input("Choose a header: "))
     max_rows = int(input("Max rows to display: "))
-    print('\n')
+    print()
     print(colnames[col_choice-1])
     print('-'*len(colnames[col_choice-1]))
     display_columns(col_choice, max_rows, content)
