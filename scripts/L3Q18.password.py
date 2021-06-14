@@ -25,7 +25,7 @@ Then, the output of the program should be:
 ABd1234@1
 '''
 import re
-def password_validator(password):
+def password_validator1(password):
     '''validate passwords'''
     lower = len(re.findall(r'[a-z]', password))
     number = len(re.findall(r'[0-9]', password))
@@ -36,7 +36,34 @@ def password_validator(password):
     if (lower>=1 and number>=1 and upper>=1 and charac>=1) and length>= 6 and length<=12 and length == len(password):
         return password
 
+def password_validation2(passwords):
+    valid = []
+    for password in passwords:
+        if len(password)<=8 and len(password)>=12:
+            continue
+        else:
+            pass
+        if not re.search('[a-z]', password):
+            continue
+        elif not re.search('[0-9]', password):
+            continue
+        elif not re.search('[A-Z]', password):
+            continue
+        elif not re.search('[$#@]', password):
+            continue
+        elif re.search('\s', password):
+            continue
+        else:
+            pass
+        valid.append(password)
+    return valid
+
+
+
+
+
 if __name__=='__main__':
     passwords = list(map(str, input('Enter passwords in comma seperated format: ').split(',')))
-    output = [password_validator(password) for password in passwords if password_validator(password)]
-    print(*output, sep = ',')
+    # output1 = [password_validator1(password) for password in passwords if password_validator1(password)]
+    # print(*output1, sep = ',')
+    print(*password_validation2(passwords), sep = ',')
